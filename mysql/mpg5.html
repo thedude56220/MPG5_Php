@@ -1,0 +1,307 @@
+<html>
+<head>
+<title>Read a Dimacs graph with an URL</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<div align="center">
+  <b>Maximal Planar Graph with minimal degree Five construction</b><br>
+  <b>by explosion, diagonal operations</b><br>
+    Dr Rolland-Balzon Philippe<br>Last update 06/2002</p>
+</div>
+<hr>
+<form method="post" action=main14.php name="MPG5_construction">
+<table><tr><td>
+
+
+  <DIV align="center">
+    <table width="49%" border="1">
+    <tr> <td colspan="2" align="center"><font face="Arial, Helvetica, sans-serif">Generator</font></td></tr>
+      <tr> 
+        <td width="35%"><font face="Arial, Helvetica, sans-serif">MPG5 description</font></td>
+    
+    <td>
+                  <table><tr>
+              <td width="85%"><font face="Arial, Helvetica, sans-serif" size="-2"> Vertices number (&gt;14) called $n</font></td>
+              <td width="15%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+               <input type="text" name="Nmax" maxlength="5" size="5">
+                </font></td>
+                </tr>
+            </table>
+    </td>
+      </tr>
+      
+      
+   <tr> 
+    <td width="35%"><font face="Arial, Helvetica, sans-serif">Graphs number</font></td>
+    <td>
+                  <table><tr>
+              <td width="90%"><font face="Arial, Helvetica, sans-serif" size="-2"></font></td>
+              <td width="10%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+               <input type="text" name="nbG" maxlength="3" size="5" value="1">
+                </font></td>
+                </tr>
+            </table>
+    </td>
+      </tr>
+      
+      
+      
+      <tr>
+              <td width="91%"><font face="Arial, Helvetica, sans-serif">Operations</font>
+              <font face="Arial, Helvetica, sans-serif" size="-2">(Explosion is necessary by starting on 14 until $n)</font>
+              </td>
+              <td width="9%"> 
+              <table>
+<tr>
+              <td width="50%"><font face="Arial, Helvetica, sans-serif" size="-2">Random FLIP (if n>16) </font></td>
+              <td width="15%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+                <input type="checkbox" name="flip" value="ok">
+                </font></td>
+              <td width="35%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+                Max by order<input type="text" name="max_d" maxlength="3" size="5" value="1">
+                </font></td>
+                </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                        
+            <tr>                                                                                                        
+              <td width="91%"><font face="Arial, Helvetica, sans-serif" size="-2">Reduce D-possibilities</font></td>    
+              <td width="9%"> <font face="Arial, Helvetica, sans-serif" size="-2">                                      
+                <input type="checkbox" name="reduceD" value="ok">                                                       
+                </font></td>                                                                                            
+            </tr>                                                                                                       
+
+
+
+
+
+
+
+
+
+
+
+
+            </table>
+      <tr> 
+        <td width="35%"><font face="Arial, Helvetica, sans-serif">Dimacs File Storage</font></td>
+        <td width="65%"> 
+          <p> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+            <input type="text" name="url" size="42" value="">
+            </font></p>
+          <ul>
+            <font face="Arial, Helvetica, sans-serif" size="-2">Ex: (with write access...)<b>
+            <li>ftp://user:password@ftp.your_site.com/dir/your_prefixe</li>
+            <li>file://c:\\dir\\your_prefixe</li>
+            <li>c:\dir\your_prefixe</li>(if php/apache in localhost)</b>
+            
+            </ul>
+        </td>
+      </tr>
+<tr> 
+        <td width="35%"><font face="Arial, Helvetica, sans-serif">Dimacs SGBD Storage (<i><font size=-2>In Progress</font></i>)</font></td>
+        <td width="65%"> 
+          <p> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+            <input type="text" name="sgbd" size="42" value="">
+            </font></p>
+          <ul>
+            <font face="Arial, Helvetica, sans-serif" size="-2">Ex: <b>IP/login/passwd@SID/table</b></ul>
+        </td>
+      </tr>
+      
+      
+      
+      <tr> 
+        <td width="35%" height="106"><font face="Arial, Helvetica, sans-serif">Display</font></td>
+        <td width="65%" height="106"> 
+          <table width="90%" border="0">
+
+            <tr> 
+              <td width="91%"><font face="Arial, Helvetica, sans-serif" size="-2">Matrix 
+                Display</font></td>
+              <td width="9%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+                <input type="checkbox" name="matrix" value="ok">
+                </font></td>
+            </tr>
+            <tr> 
+              <td width="91%"><font face="Arial, Helvetica, sans-serif" size="-2">Process 
+                Verbose</font></td>
+              <td width="9%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+                <input type="checkbox" name="verbose" value="ok">
+                </font></td>
+            </tr>
+                 <tr> 
+              <td width="91%"><font face="Arial, Helvetica, sans-serif" size="-2">Display selected vertex (for explosion)</font></td>
+              <td width="9%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+                <input type="checkbox" name="selected" value="ok">
+                </font></td>
+            </tr>
+            <tr> 
+              <td width="91%"><font face="Arial, Helvetica, sans-serif" size="-2">Verification (Final step)</font></td>
+              <td width="9%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+                <input type="checkbox" name="verif" value="ok">
+                </font></td>
+            </tr>
+                <tr> 
+              <td width="91%"><font face="Arial, Helvetica, sans-serif" size="-2">Verification (all steps)</font></td>
+              <td width="9%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+                <input type="checkbox" name="verif_all" value="ok">
+                </font></td>
+            </tr>
+
+            <tr> 
+              <td width="91%"><font face="Arial, Helvetica, sans-serif" size="-2">Dimacs 
+                Display</font></td>
+              <td width="9%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+                <input type="checkbox" name="dimacs" value="ok">
+                </font></td>
+            </tr>
+            <tr> 
+              <td width="91%"><font face="Arial, Helvetica, sans-serif" size="-2">Number of flip by order</font></td>
+              <td width="9%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+                <input type="checkbox" name="statD" value="ok">
+                </font></td>
+            </tr>
+            <tr> 
+              <td width="91%"><font face="Arial, Helvetica, sans-serif" size="-2">Computing Time</font></td>
+              <td width="9%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+                <input type="checkbox" name="time" value="ok">
+                </font></td>
+            </tr>
+            
+
+             <tr>                                                                                                    
+               <td width="91%"><font face="Arial, Helvetica, sans-serif" size="-2">Number of vertices $x$ in Xsup6
+                with N(x) in Xinf6</font></td>        
+               <td width="9%"> <font face="Arial, Helvetica, sans-serif" size="-2">                                  
+                 <input type="checkbox" name="compute_nbD" value="ok">                                                      
+                 </font></td>                                                                                    
+             </tr>                                                                                                   
+
+
+
+                                                                                                 
+                   </table>   
+                                                                                  
+                                                                                  
+                                                                                                                                 
+                                                                                                                              
+<tr> 
+        <td width="35%"><font face="Arial, Helvetica, sans-serif">How To</font></td>
+        <td width="65%"><font face="Arial, Helvetica, sans-serif" size="-2"> <a href=./doc/flip_readme.pdf>2.0.1</a>,<a href=./doc/explosion_readme.pdf>1.0.3</a>
+        </td>
+      </tr>
+ 
+ <tr> 
+        <td width="35%"><font face="Arial, Helvetica, sans-serif">Sources</font></td>
+        <td width="65%"><font face="Arial, Helvetica, sans-serif" size="-2"><a href=./gen13.php.txt>PHP</a>,C++
+        </td>
+      </tr>
+      
+    </table>
+  </div>
+  <center>
+  <p align="center"> 
+  
+    <input type="submit" name="Submit" value="Build">
+  </p>
+  </td>
+  <td>
+  
+  
+    <div align="center">
+    <table width="49%" border="1">
+    <tr> <td colspan="2" align="center"><font face="Arial, Helvetica, sans-serif">Loader</font></td></tr>
+      <tr> 
+        <td width="35%"><font face="Arial, Helvetica, sans-serif">Load Dimacs file graph</font></td>
+     
+            <td>
+              <table><tr>
+              <td width="85%"><font face="Arial, Helvetica, sans-serif" size="-2"> URL (<i>in read access</i>)</font></td>
+              <td width="15%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+               <input type="text" name="loadurl" maxlength="5" size="5">
+                </font></td>
+                </tr>
+                </table>
+            </td>
+      </tr>  
+      
+      
+            <tr> 
+        <td width="35%"><font face="Arial, Helvetica, sans-serif">Load Dimacs sgbd graph</font></td>
+     
+            <td>
+              <table><tr>
+              <td width="85%"><font face="Arial, Helvetica, sans-serif" size="-2">user/passwd@sid@ip (<i>in read access</i>)</font></td>
+              <td width="15%"> <font face="Arial, Helvetica, sans-serif" size="-2"> 
+               <input type="text" name="loadsgbd" maxlength="5" size="5">
+                </font></td>
+                </tr>
+                </table>
+            </td>
+      </tr>
+      
+      
+      </table>
+      <br>
+       <input type="submit" name="Submit" value="Load">
+      
+      
+      </td>
+      </tr> 
+  </table>
+ 
+</form>
+</center>
+
+<hr>
+<p><u>Introduction:</u> <font face="Arial, Helvetica, sans-serif" size="-2">We are looking for a new 
+  approach in order to construct all $MPG5$. Here we will give some informations 
+  about this goal.</font></p>
+<ul>
+  <li><font face="Arial, Helvetica, sans-serif" size="-2"><a href="./data/mpg5_14.php.txt">Matrix</a> 
+    of $MPG5_14$ with plan orientation.</font></li>
+  <li><font face="Arial, Helvetica, sans-serif" size="-2">Transformations on $MPG5$ 
+    : </font> 
+    <ul>
+      <li><font face="Arial, Helvetica, sans-serif" size="-2">Explosion $T$ Version 
+        1.0.3 (05/2002/) </li>
+        <li><font face="Arial, Helvetica, sans-serif" size="-2">Flip $D$ Version 2.0.1 (06/2002)</li>      
+    </ul>
+    
+    <ul>
+        <li>HowTo: <a href=./doc/explosion_readme.pdf>pdf</a>, <a href=./doc/explosion_readme.tex>tex</a>,  <a href=./doc/>All Ressources</a></li>
+        <li>Demo/Read Me <a href="mpg5.html">mpg5.html</a>V2.0.1</li>
+        <li>source <a href="gen12.php.txt">gen13.php.txt</a>] </font></li>
+        </ul>
+    
+    
+  </li>
+</ul>
+<br>
+<hr>
+    Contacts :
+    <blockquote>
+    <a href=http://prolland.free.fr>http://prolland.free.fr</a> | <a href=http://prolland.multimania.fr>http://prolland.multimania.fr</a> <br>
+    <a href=mailto:prolland@free.fr>prolland@free.fr</a> | <a href=mailto:prolland@sepro-robotique.com>prolland@sepro-robotique.com</a></p>
+ </blockquote>
+<br>
+<hr>
+See :
+<br>
+1. <a href=http://mat.gsia.cmu.edu/COLOR/instances.html>http://mat.gsia.cmu.edu/COLOR/instances.html</a>: Dimacs graphs instances<br>
+</body>
+</html>
